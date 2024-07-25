@@ -51,13 +51,39 @@ images.map(function (image) {
   imagesWrapper.insertAdjacentHTML('beforeend', imageElement);
 });
 
-// filter images
-btns.forEach(function (btn) {
-  btn.addEventListener('click', function () {
-    btns.forEach((btn) => {
-      btn.classList.remove('active');
-    });
+const imageElements = document.querySelectorAll('.filter-image'); //btns가 아니라 이미지 선언하는 것
+console.log(imageElements);
 
-    this.classList.add('active');
+// filter imagesfunction activateFilter{
+
+//fiter images
+function activateFilter() {
+  btns.forEach((btn) => {
+    btn.classList.remove('active');
   });
+
+  this.classList.add('active');
+
+  const selectedBtn = this.getAttribute('data-filter');
+
+  // map, filter, reduce 함수는 DOM 요소에 사용할 수 없음, 그러므로 Array.from()을 사용하여 배열로 변환한다.
+  Array.from(imageElements).filter((imageElement) => {
+    imageElement.classList.add('hide');
+    setTimeout(() => {
+      if (
+        imageElement.getAttribute('data-filter') === selectedBtn ||
+        selectedBtn === 'all'
+      ) {
+        imageElement.classList.remove('hide');
+        imageElement.classList.add('show');
+      } else {
+        imageElement.classList.remove('show');
+        imageElement.classList.add('hide');
+      }
+    });
+  }, 100); //시간 지연 함수(promise):첫번째 파라미터 = callback function, 두번째 파라미터 = 시간(밀리초)
+}
+
+btns.forEach(function (btn) {
+  btn.addEventListener('click', activateFilter);
 });
