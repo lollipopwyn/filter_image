@@ -87,3 +87,24 @@ function activateFilter() {
 btns.forEach(function (btn) {
   btn.addEventListener('click', activateFilter);
 });
+
+// activate light box when click each image
+//e = event
+const showLightBox = (e) => {
+  const target = e.currentTarget;
+  const selectedImage = target.children[0].children[0].getAttribute('src');
+  const catagoryName = target.getAttribute('data-filter');
+
+  const lightBoxImage = document.querySelector('light-box-image img');
+  const categoryElement = document.querySelector('.title p');
+
+  // getAttribute(): 파라미터 속성 값 가져오기
+  // setAttribute(a, b): a: 속성 이름, b: 변경할 속성 값
+  // a.textContent = b: a 요소에 b 텍스트 입력
+  lightBoxImage.setAttribute('src', selectedImage);
+  categoryElement.textContent = catagoryName;
+};
+
+imageElements.forEach((imageElement) => {
+  imageElement.addEventListener('click', showLightBox);
+});

@@ -11,6 +11,12 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <!-- Remix Icon CDN Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+      referrerpolicy="no-referrer"
+    />
   </head>
 
   <body>
@@ -25,12 +31,24 @@
           <div class="filter-image" data-filter="watch"></div>
           <div class="filter-image" data-filter="headphone"></div> -->
         </div>
+
+        <div class="light-box">
+          <div class="light-box-text">
+            <div class="title">
+              IMAGE CATEGORY:
+              <p></p>
+            </div>
+            <!-- remix Icon을 쓸려면 꼭 html에 cdn 링크를 연결해야한다 -->
+            <button><i class="ri-close-circle-fill"></i></button>
+          </div>
+          <div class="light-box-image">
+            <img src="/images/camera-1.jpg" alt="" />
+          </div>
+        </div>
+        <div class="overlay"></div>
       </div>
     </div>
 
-    <footer>
-      <div></div>
-    </footer>
     <!-- ========스크립트========= -->
     <script src="js/custom.js"></script>
   </body>
