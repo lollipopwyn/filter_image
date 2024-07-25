@@ -1,0 +1,101 @@
+@import url(https://fonts.googleapis.com/css?family=Noto+Serif:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+/* 레이아웃 세팅 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: #fff8f3;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+}
+
+.filter-wrapper {
+  margin-top: 20vh;
+}
+
+/* filter */
+
+.filter-btns {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+.filter-btns .filter-btn {
+  border: 1px solid #758694;
+  outline: 0;
+  width: 16.66%;
+  padding: 0 0.5rem 0;
+  background: #758694;
+  color: #ffefef;
+  font-family: 'Noto Serif', serif;
+}
+
+.filter-btns .filter-btn:hover,
+.filter-btns .filter-btn.active {
+  background: #405d72;
+}
+
+/* Fillter Image Box Style */
+.filter-images {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.filter-images .filter-image {
+  width: 25%;
+  padding: 0.25rem;
+  animation: scale 0.3s 1;
+}
+@keyframes scale {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.filter-images .filter-image span {
+  padding: 0.25rem;
+  background: #758694;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ffefef;
+  position: relative;
+}
+
+.filter-images .filter-image img {
+  width: 100%;
+  display: block;
+}
+
+.filter-images .filter-image span::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff8f3;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.filter-images .filter-image:hover span::after {
+  opacity: 0.2;
+  transition: 0.3s;
+}
