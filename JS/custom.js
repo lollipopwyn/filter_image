@@ -90,12 +90,16 @@ btns.forEach(function (btn) {
 
 // activate light box when click each image
 //e = event
+
+const lightBox = document.querySelector('.light-box');
+const overlay = document.querySelector('.overlay');
+
 const showLightBox = (e) => {
   const target = e.currentTarget;
   const selectedImage = target.children[0].children[0].getAttribute('src');
   const catagoryName = target.getAttribute('data-filter');
 
-  const lightBoxImage = document.querySelector('light-box-image img');
+  const lightBoxImage = document.querySelector('.light-box-image img');
   const categoryElement = document.querySelector('.title p');
 
   // getAttribute(): 파라미터 속성 값 가져오기
@@ -103,8 +107,21 @@ const showLightBox = (e) => {
   // a.textContent = b: a 요소에 b 텍스트 입력
   lightBoxImage.setAttribute('src', selectedImage);
   categoryElement.textContent = catagoryName;
+
+  lightBox.style.display = 'block';
+  overlay.style.display = 'block';
 };
 
 imageElements.forEach((imageElement) => {
   imageElement.addEventListener('click', showLightBox);
 });
+
+//CLOSE LIGHT BOX
+const closeBtn = document.querySelector('.ri-close-circle-fill');
+
+const closeLightBox = () => {
+  lightBox.style.display = 'none';
+  overlay.style.display = 'none';
+};
+closeBtn.addEventListener('click', closeLightBox);
+overlay.addEventListener('click', closeLightBox);

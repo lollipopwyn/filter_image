@@ -1,4 +1,6 @@
-// Create button element 
+### Ver.01
+
+// Create button element
 
 // charAt(): 파라미터 인덱스에 해당하는 문자 선택
 // toUpperCase(): 대문자로 변환

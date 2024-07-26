@@ -1,0 +1,40 @@
+@media (max-width: 600px) {
+  html {
+    flex-direction: column;
+  }
+
+  .filter-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    right: 20px;
+    top: 20px;
+  }
+
+  .filter-btns .filter-btn {
+    width: 70px;
+    height: auto;
+    font-size: 15px;
+    display: flex;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+  }
+
+  .filter-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: -70px;
+  }
+
+  .filter-images .filter-image {
+    width: calc(50% - 10px);
+    margin-bottom: 10px;
+  }
+
+  .light-box {
+    font-size: large;
+    width: 80%;
+  }
+}
