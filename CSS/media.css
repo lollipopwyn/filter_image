@@ -24,7 +24,7 @@
   .filter-images {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     margin-left: -70px;
   }
 
